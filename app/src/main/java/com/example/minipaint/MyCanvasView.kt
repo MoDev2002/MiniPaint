@@ -2,6 +2,7 @@ package com.example.minipaint
 
 import android.content.Context
 import android.graphics.*
+import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
@@ -11,7 +12,7 @@ import kotlin.math.abs
 //the width of the stroke or painting brush
 private const val STROKE_WIDTH = 12f
 
-class MyCanvasView(context : Context) : View(context) {
+class MyCanvasView @JvmOverloads constructor(context : Context, attributeSet: AttributeSet? = null, defStyle : Int = 0) : View(context, attributeSet, defStyle) {
 
     //make variables to save the bitmap and canvas in
     private lateinit var extraBitmap: Bitmap
@@ -117,4 +118,6 @@ class MyCanvasView(context : Context) : View(context) {
     private fun touchUp() {
         path.reset()
     }
+
+
 }
