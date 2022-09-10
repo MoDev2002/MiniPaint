@@ -122,13 +122,8 @@ class MyCanvasView @JvmOverloads constructor(context : Context, attributeSet: At
     fun delete() {
         extraBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         extraCanvas = Canvas(extraBitmap)
+        extraCanvas.drawColor(backgroundColor)
         path = Path()
-        invalidate()
-    }
-
-    fun deleteAlt() {
-        extraBitmap.eraseColor(Color.TRANSPARENT)
-        path.reset()
         invalidate()
     }
 

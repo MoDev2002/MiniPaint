@@ -14,16 +14,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        window.decorView.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN
         setContentView(binding.root)
 
 
         val myCanvasView = binding.customView
 
         //make view take full screen
-
-
-        binding.deleteButton!!.setOnClickListener {
-            myCanvasView!!.delete()
+        binding.deleteButton.setOnClickListener {
+            myCanvasView.delete()
         }
 
     }
